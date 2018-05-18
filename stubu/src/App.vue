@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <v-toolbar>
@@ -42,18 +42,26 @@
 export default {
   data () {
     return {
-      sideNav: false,
+      sideNav: false
     }
   },
   computed: {
-    menuItems() {
+    menuItems () {
       let menuItems = [
         { title: 'Home', link: '/' },
         { title: 'About', link: '/about' },
         { title: 'Sign up', link: '/signup' },
         { title: 'Sign in', link: '/signin' }
       ]
-      if (this.userIsAuthenticated) {
+      if (this.tutorIsAuthenticated) {
+        menuItems = [
+          { title: 'Home', link: '/' },
+          { title: 'About', link: '/about' },
+          { title: 'Sessions', link: '/sessions' },
+          { title: 'Profile', link: '/profile' }
+        ]
+      }
+      if (this.tuteeIsAuthenticated) {
         menuItems = [
           { title: 'Home', link: '/' },
           { title: 'About', link: '/about' },
@@ -66,6 +74,12 @@ export default {
     },
     userIsAuthenticated () {
       return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+    },
+    tutorIsAuthenticated () {
+      return this.$store.getters.tutor !== null && this.$store.getters.tutor !== undefined
+    },
+    tuteeIsAuthenticated () {
+      return this.$store.getters.tutee !== null && this.$store.getters.tutee !== undefined
     }
   }
 }

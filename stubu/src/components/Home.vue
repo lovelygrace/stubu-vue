@@ -1,9 +1,9 @@
 <template>
   <v-container class="main">
     <div class="heading">
-      <h1>LOOKING FOR A TUTOR OR STUDY BUDDY? STUBU HAS GOT YOU COVERED.</h1>
+      <h1 class="white--text">LOOKING FOR A TUTOR OR STUDY BUDDY? STUBU HAS GOT YOU COVERED.</h1>
     </div>
-    <v-card flat color="grey lighten-2">
+    <v-card flat color="teal">
     <v-container fluid>
       <v-layout row child-flex wrap>
         <div>
@@ -50,7 +50,7 @@
   </v-footer> -->
   <v-footer class="foot" height="auto">
     <v-card flat tile class="flex" >
-      <v-card-title class="grey lighten-2">
+      <v-card-title class="teal">
         <strong class="subheading">We've got you all covered</strong>
         <v-spacer></v-spacer>
         <v-btn>View All Subjects</v-btn>
@@ -99,7 +99,7 @@
           </v-flex>
         </v-layout>
       </v-card-text>
-      <v-card-actions class="grey lighten-2 justify-center">
+      <v-card-actions class="teal justify-center">
         &copy;2018 — <strong>STUBU</strong>
       </v-card-actions>
     </v-card>
@@ -160,7 +160,7 @@ export default {
     padding-bottom: 20px;
     text-align: center;
     text-decoration-style: solid;
-    background-color: #E0E0E0;
+    background-color: #009688;
     /* background-color:#FFE0B2;  */
   }
 </style>

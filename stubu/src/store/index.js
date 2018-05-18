@@ -22,7 +22,9 @@ export const store = new Vuex.Store({
         date: new Date()
       }
     ],
-    user: null
+    user: null,
+    tutor: null,
+    tutee: null
   },
   mutations: {
     createMeetup (state, payload) {
@@ -30,6 +32,12 @@ export const store = new Vuex.Store({
     },
     setUser   (state, payload) {
       state.user = payload
+    },
+    setTutor (state, payload) {
+      state.tutor = payload
+    },
+    setTutee (state, payload) {
+      state.tutee = payload
     }
   },
   actions: {
@@ -59,6 +67,56 @@ export const store = new Vuex.Store({
           error => {
             console.log(error)
           })
+    },
+    signTutorUp ({commit}, payload) {
+      const tutor = {
+        firstname: payload.firstname,
+        lastname: payload.lastname,
+        contactnumber: payload.contactnumber,
+        degree: payload.degree,
+        email: payload.email,
+        password: payload.email,
+        subject: payload.subject,
+        aboutme: payload.aboutme
+      }
+      firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
+        .then(
+          tutor => {
+            const newTutor = {
+              id: tutor.uid
+            }
+            commit('setTutor', newTutor)
+          }
+        )
+        .catch(
+          error => {
+            console.log(error)
+          })
+      firebase.database().ref('tutors').push(tutor)
+    },
+    signTuteeUp ({commit}, payload) {
+      const tutor = {
+        firstname: payload.firstname,
+        lastname: payload.lastname,
+        contactnumber: payload.contactnumber,
+        email: payload.email,
+        password: payload.contactnumber
+      }
+      firebase.database().ref('tutees').push(tutor)
+      firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
+        .then(
+          tutee => {
+            const newTutee = {
+              id: tutee.uid,
+              registeredMeetups: []
+            }
+            commit('setTutee', newTutee)
+          }
+        )
+        .catch(
+          error => {
+            console.log(error)
+          })
     }
   },
   getters: {
@@ -79,6 +137,12 @@ export const store = new Vuex.Store({
     },
     user (state) {
       return state.user
+    },
+    tutor (state) {
+      return state.tutor
+    },
+    tutee (state) {
+      return state.tutee
     }
   }
 })

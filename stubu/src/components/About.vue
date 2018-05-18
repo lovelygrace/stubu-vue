@@ -1,15 +1,15 @@
 <template>
   <div>
     <v-container>
-      <v-card color="grey lighten-2">
-        <h1 class="header">WHY STUBU SERVICE WAS CREATED</h1>
-        <p class="p">STUBU was created to promote student success by increasing access to one-on-one education. Colleges and universities across the country get frequent phone calls from parents of high school students looking for high quality, inexpensive peer tutors for their children. Parents want to find tutors for a variety of situations, from the student who is having difficulty passing algebra, to the AP student who needs a tutor and role model. Most tutoring companies are not affordable for the majority of families. ln addition, at some colleges and universities there may be limited tutoring available for students with upper level courses in departments such as physics, chemistry, engineering, finance, and language. STUBU helps solve these problems by providing a safe, simple environment for connecting students and parents in-person and online with private tutors across a wide variety of subjects.</p>
+      <v-card color="teal">
+        <h1 class="black--text">WHY STUBU SERVICE WAS CREATED</h1>
+        <p class="black--text">STUBU was created to promote student success by increasing access to one-on-one education. Colleges and universities across the country get frequent phone calls from parents of high school students looking for high quality, inexpensive peer tutors for their children. Parents want to find tutors for a variety of situations, from the student who is having difficulty passing algebra, to the AP student who needs a tutor and role model. Most tutoring companies are not affordable for the majority of families. ln addition, at some colleges and universities there may be limited tutoring available for students with upper level courses in departments such as physics, chemistry, engineering, finance, and language. STUBU helps solve these problems by providing a safe, simple environment for connecting students and parents in-person and online with private tutors across a wide variety of subjects.</p>
       </v-card>
       <!-- <h1 class="header2">WHAT WE ARE ABOUT</h1>
       <p class="p2">We help you connect with the perfect study budy or tutor.</p> -->
       <v-footer class="foot" height="auto">
     <v-card flat tile class="flex" >
-      <v-card-title class="grey lighten-2">
+      <v-card-title class="teal">
         <strong class="subheading">We've got you all covered</strong>
         <v-spacer></v-spacer>
         <v-btn>View All Subjects</v-btn>
@@ -58,7 +58,7 @@
           </v-flex>
         </v-layout>
       </v-card-text>
-      <v-card-actions class="grey lighten-2 justify-center">
+      <v-card-actions class="teal justify-center">
         &copy;2018 — <strong>STUBU</strong>
       </v-card-actions>
     </v-card>
@@ -91,13 +91,13 @@ export default{
 </script>
 
 <style>
-  .header {
+  h1 {
     padding-top: 50px;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 20px;
   }
-  .p {
+  p {
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
