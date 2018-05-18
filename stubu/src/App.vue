@@ -43,15 +43,29 @@ export default {
   data () {
     return {
       sideNav: false,
-      menuItems: [
+    }
+  },
+  computed: {
+    menuItems() {
+      let menuItems = [
         { title: 'Home', link: '/' },
         { title: 'About', link: '/about' },
-        { title: 'Sessions', link: '/sessions' },
-        { title: 'New Session', link: '/session/new' },
-        { title: 'Profile', link: '/profile' },
         { title: 'Sign up', link: '/signup' },
         { title: 'Sign in', link: '/signin' }
       ]
+      if (this.userIsAuthenticated) {
+        menuItems = [
+          { title: 'Home', link: '/' },
+          { title: 'About', link: '/about' },
+          { title: 'Sessions', link: '/sessions' },
+          { title: 'New Session', link: '/session/new' },
+          { title: 'Profile', link: '/profile' }
+        ]
+      }
+      return menuItems
+    },
+    userIsAuthenticated () {
+      return this.$store.getters.user !== null && this.$store.getters.user !== undefined
     }
   }
 }

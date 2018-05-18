@@ -22,10 +22,7 @@ export const store = new Vuex.Store({
         date: new Date()
       }
     ],
-    user: {
-      id: 'dfsgagagaas',
-      registeredMeetups: ['2']
-    }
+    user: null
   },
   mutations: {
     createMeetup (state, payload) {
@@ -79,6 +76,9 @@ export const store = new Vuex.Store({
     },
     featuredMeetups (state, getters) {
       return getters.loadedMeetups.slice(0, 5)
+    },
+    user (state) {
+      return state.user
     }
   }
 })

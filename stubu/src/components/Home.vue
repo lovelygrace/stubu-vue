@@ -8,7 +8,7 @@
       <v-layout row child-flex wrap>
         <div>
           <v-toolbar>
-            <v-text-field v-model="search" label="What subject can we help you with?"></v-text-field>
+            <v-text-field label="What subject can we help you with?"></v-text-field>
             <v-btn icon >
               <v-icon>search</v-icon>
             </v-btn>
@@ -108,13 +108,13 @@
 </template>
 
 <script>
-export default{
+export default {
   data () {
     return {
       pics: [
-        {title: 'Meet at Home or Online', link: 'https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.15752-9/32658812_2002374696747426_2618684020417888256_n.png?_nc_cat=0&oh=49f736d9cadfec4f5ab52e7def5e76f9&oe=5B885539'},
-        {title: 'Achieve Academic Results', link: 'https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.15752-9/32562041_2002375833413979_9152861760619806720_n.png?_nc_cat=0&oh=d0fd692931bcaafabab1389fb4b00238&oe=5B8B28CE'},
-        {title: 'Find the Perfect Tutor for you', link: 'https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.15752-9/32590519_2002375856747310_3258431820202508288_n.png?_nc_cat=0&oh=03a5890b60cbd97b9cc4949958e30da3&oe=5B9C1613'}
+        {title: 'Meet at Home or Online', link: 'https://s9.postimg.cc/h9vxugyxr/first.png'},
+        {title: 'Achieve Academic Results', link: 'https://s9.postimg.cc/580k0ccun/second.png'},
+        {title: 'Find the Perfect Tutor for you', link: 'https://s9.postimg.cc/esk6n7ugv/third.png'}
       ],
       rows: [
         {
