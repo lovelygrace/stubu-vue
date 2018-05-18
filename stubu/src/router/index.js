@@ -56,8 +56,8 @@ export default new Router({
     },
     {
       path: '/sessions/:id',
-      props: true,
       name: 'Session',
+      props: true,
       component: Session
     }
   ],

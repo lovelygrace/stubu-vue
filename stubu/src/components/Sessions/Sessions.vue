@@ -11,7 +11,7 @@
                   <v-flex xs6 sm7>
                     <div class="text-xs-center">
                       <div class="headline">{{ meetup.title }}</div>
-                      <div>{{ meetup.date }}</div>
+                      <div>{{ meetup.date | date }}</div>
                     </div>
                     <v-card-actions fluid>
                       <v-btn flat :to="'sessions/'+ meetup.id">

@@ -163,5 +163,4 @@ export default{
     background-color: #E0E0E0;
     /* background-color:#FFE0B2;  */
   }
-  
 </style>
