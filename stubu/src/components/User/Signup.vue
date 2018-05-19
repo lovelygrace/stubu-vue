@@ -9,12 +9,12 @@
         <v-card-text>
           <v-container grid-list-md>
             <v-layout wrap>
-            <v-form ref="tutorform" lazy-validation>
+            <form ref="tutorform" lazy-validation>
               <v-flex xs12>
                 <v-text-field
                 name="first name"
                 label="First Name"
-                id="firstname"
+                id="firstname1"
                 v-model="tutorfirstname"
                 :rules="firstnameRules"
                 required></v-text-field>
@@ -23,7 +23,7 @@
                 <v-text-field
                   name="last name"
                   label="Last Name"
-                  id="lastname"
+                  id="lastname1"
                   v-model="tutorlastname"
                   :rules="lastnameRules"
                   required
@@ -33,7 +33,7 @@
                 <v-text-field
                   name="contact number"
                   label="Contact Number"
-                  id="contactnumber"
+                  id="contactnumber1"
                   v-model="tutorcontactnumber"
                   :rules="contactnumberRules"
                   required
@@ -45,7 +45,6 @@
                 label="Degree"
                 id="degree"
                 v-model="tutordegree"
-                :rules="degreeRules"
                 required></v-text-field>
               </v-flex>
               <v-flex xs12>
@@ -61,7 +60,6 @@
                 type="password"
                 v-model="tutorpassword"
                 :rules="passwordRules"
-                :counter="6"
                 required></v-text-field>
               </v-flex>
               <v-flex xs12>
@@ -69,7 +67,7 @@
                 name="confirm password"
                 label="Confirm Password"
                 type="password"
-                id="confirmpassword"
+                id="confirmpassword1"
                 v-model="tutorconfirmpassword"
                 :rules="confirmpasswordRules"
                 required></v-text-field>
@@ -92,7 +90,7 @@
                 multi-line></v-text-field>
               </v-flex>
               </v-flex>
-          </v-form>
+          </form>
             </v-layout>
           </v-container>
           <small>*indicates required field</small>
@@ -113,12 +111,12 @@
         <v-card-text>
           <v-container grid-list-md>
             <v-layout wrap>
-            <v-form ref="tuteeform" lazy-validation>
+            <form ref="tuteeform" lazy-validation>
               <v-flex xs12>
                 <v-text-field
                 name="first name"
                 label="First Name"
-                id="firstname"
+                id="firstname2"
                 v-model="tuteefirstname"
                 :rules="firstnameRules"
                 required></v-text-field>
@@ -127,7 +125,7 @@
                 <v-text-field
                   name="last name"
                   label="Last Name"
-                  id="lastname"
+                  id="lastname2"
                   v-model="tuteelastname"
                   :rules="lastnameRules"
                   required
@@ -137,7 +135,7 @@
                 <v-text-field
                   name="contact number"
                   label="Contact Number"
-                  id="contactnumber"
+                  id="contactnumber2"
                   v-model="tuteecontactnumber"
                   :rules="contactnumberRules"
                   required
@@ -156,7 +154,6 @@
                 type="password"
                 v-model="tuteepassword"
                 :rules="passwordRules"
-                :counter="6"
                 required></v-text-field>
               </v-flex>
               <v-flex xs12>
@@ -164,11 +161,11 @@
                 name="confirm password"
                 label="Confirm Password"
                 type="password"
-                id="confirmpassword"
+                id="confirmpassword2"
                 v-model="tuteeconfirmpassword"
                 required></v-text-field>
               </v-flex>
-          </v-form>
+          </form>
             </v-layout>
           </v-container>
           <small>*indicates required field</small>

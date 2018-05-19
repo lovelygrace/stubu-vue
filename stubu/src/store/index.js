@@ -72,12 +72,12 @@ export const store = new Vuex.Store({
       const tutor = {
         firstname: payload.firstname,
         lastname: payload.lastname,
-        contactnumber: payload.contactnumber,
+        contactnumber: payload.contact,
         degree: payload.degree,
         email: payload.email,
-        password: payload.email,
+        password: payload.password,
         subject: payload.subject,
-        aboutme: payload.aboutme
+        aboutme: payload.about
       }
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then(
@@ -95,20 +95,18 @@ export const store = new Vuex.Store({
       firebase.database().ref('tutors').push(tutor)
     },
     signTuteeUp ({commit}, payload) {
-      const tutor = {
+      const tutee = {
         firstname: payload.firstname,
         lastname: payload.lastname,
-        contactnumber: payload.contactnumber,
+        contactnumber: payload.contact,
         email: payload.email,
-        password: payload.contactnumber
+        password: payload.password
       }
-      firebase.database().ref('tutees').push(tutor)
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then(
           tutee => {
             const newTutee = {
-              id: tutee.uid,
-              registeredMeetups: []
+              id: tutee.uid
             }
             commit('setTutee', newTutee)
           }
@@ -117,6 +115,7 @@ export const store = new Vuex.Store({
           error => {
             console.log(error)
           })
+      firebase.database().ref('tutees').push(tutee)
     }
   },
   getters: {
