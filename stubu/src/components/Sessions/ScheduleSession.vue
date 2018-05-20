@@ -21,28 +21,36 @@
           <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
               <v-text-field
-                name="location"
-                label="Location"
-                id="location"
-                v-model="location"
+                name="subject"
+                label="Subject"
+                id="subject"
+                v-model="subject"
                 required></v-text-field>
             </v-flex>
           </v-layout>
           <v-layout row>
+            <!-- <p>{{ this.myInfoTutee.firstname }}</p>
+            <p>{{ this.myInfoTutee.lastname }}</p>
+            <p>{{ this.myInfoTutee.contactnumber }}</p>
+            <p>{{ this.myInfoTutee.email }}</p>
+            <p>HHHHHHHHUYYYYY</p> -->
+          </v-layout>
+          <!-- <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
-              <v-text-field
-                name="imageUrl"
-                label="Image URL"
-                id="imageUrl"
-                v-model="imageUrl"
-                required></v-text-field>
+              <v-btn raised @click="onPickFile"> Upload Image</v-btn>
+              <input
+                type="file"
+                style="display: none"
+                ref="fileInput"
+                accept="image/*"
+                @change="onFilePicked">
             </v-flex>
           </v-layout>
           <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
               <img :src="imageUrl" height="150" alt="">
             </v-flex>
-          </v-layout>
+          </v-layout> -->
           <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
               <v-text-field
@@ -52,21 +60,6 @@
                 multi-line
                 v-model="description"
                 required></v-text-field>
-            </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <h4>Choose a Date and Time</h4>
-            </v-flex>
-          </v-layout>
-          <v-layout row class="mb-2">
-            <v-flex xs12 sm6 offset-sm3 >
-              <v-date-picker v-model="date"></v-date-picker>
-            </v-flex>
-          </v-layout>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-time-picker v-model="time"></v-time-picker>
             </v-flex>
           </v-layout>
           <v-layout row>
@@ -86,23 +79,22 @@ export default{
   data () {
     return {
       title: '',
-      location: '',
-      imageUrl: '',
-      description: '',
-      date: '',
-      time: ''
+      subject: '',
+      description: ''
     }
   },
   computed: {
     formIsValid () {
       return this.title !== '' &&
-       this.location !== '' &&
-       this.description !== '' &&
-       this.imageUrl !== ''
+       this.subject !== '' &&
+       this.description !== ''
     },
     submittableDateTime () {
       const date = new Date(this.date)
       return date
+    },
+    myInfoTutee () {
+      return this.$store.getters.tutee
     }
   },
   methods: {
@@ -112,14 +104,33 @@ export default{
       }
       const meetupData = {
         title: this.title,
-        location: this.location,
-        imageUrl: this.imageUrl,
+        subject: this.subject,
         description: this.description,
-        date: this.submittableDateTime
+        firstname: this.myInfoTutee.firstname,
+        lastname: this.myInfoTutee.lastname,
+        contactnumber: this.myInfoTutee.contactnumber,
+        email: this.myInfoTutee.email
       }
       this.$store.dispatch('createMeetup', meetupData)
       this.$router.push('/sessions')
+    },
+    onPickFile () {
+      this.$refs.fileInput.click()
+    },
+    onFilePicked (event) {
+      const files = event.target.files
+      let filename = files[0].name
+      if (filename.lastIndexOf('.') <= 0) {
+        return alert('Please add a valid file')
+      }
+      const fileReader = new FileReader()
+      fileReader.addEventListener('load', () => {
+        this.imageUrl = fileReader.result
+      })
+      fileReader.readAsDataURL(files[0])
+      this.image = files[0]
     }
+
   }
 }
 </script>

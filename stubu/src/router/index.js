@@ -12,6 +12,7 @@ import Signup from '@/components/User/Signup'
 import ScheduleSession from '@/components/Sessions/ScheduleSession'
 import Sessions from '@/components/Sessions/Sessions'
 import Session from '@/components/Sessions/Session'
+import AuthGuard from './auth-guard'
 
 Vue.use(Router)
 Vue.use(Vuetify)
@@ -31,7 +32,8 @@ export default new Router({
     {
       path: '/profile',
       name: 'Profile',
-      component: Profile
+      component: Profile,
+      beforeEnter: AuthGuard
     },
     {
       path: '/signin',
@@ -52,7 +54,8 @@ export default new Router({
     {
       path: '/session/new',
       name: 'ScheduleSession',
-      component: ScheduleSession
+      component: ScheduleSession,
+      beforeEnter: AuthGuard
     },
     {
       path: '/sessions/:id',
