@@ -1,7 +1,21 @@
 <template>
-  <v-layout row wrap justify-center>
+  <v-container>
+    <section>
+      <v-parallax src="https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="600">
+        <v-layout row wrap justify-center>
+          <v-layout
+            column
+            align-center
+            justify-center
+          >
+          <!-- <v-card width="500" height="600"> -->
+          
+          <!-- <v-card width="200"> -->
+          <h1 class="white--text mb-2 display-1 text-xs-center">SIGN UP NOW!</h1>
+          <!-- </v-card> -->
+         <!-- <v-divider></v-divider> -->
     <v-dialog v-model="dialog1" persistent max-width="500px">
-      <v-btn slot="activator" color="teal" dark>For Tutor</v-btn>
+      <v-btn slot="activator" color="deep-orange lighten-3">Sign Up for Tutor</v-btn>
       <v-card>
         <v-card-title>
           <span class="headline">Tutor User Profile</span>
@@ -62,7 +76,7 @@
                 :rules="passwordRules"
                 required></v-text-field>
               </v-flex>
-              <v-flex xs12>
+              <!-- <v-flex xs12>
                 <v-text-field
                 name="confirm password"
                 label="Confirm Password"
@@ -71,7 +85,7 @@
                 v-model="tutorconfirmpassword"
                 :rules="confirmpasswordRules"
                 required></v-text-field>
-              </v-flex>
+              </v-flex> -->
               <v-flex xs12 sm6>
                 <v-select
                   :items="['Algebra', 'Biology', 'Calculus', 'Chemistry', 'Communication', 'General Science', 'Grammar', 'Literature', 'Physics', 'Trigonometry', 'Writing']"
@@ -103,7 +117,7 @@
       </v-card>
     </v-dialog>
     <v-dialog v-model="dialog2" persistent max-width="500px">
-      <v-btn slot="activator" color="teal" dark>For Tutee</v-btn>
+      <v-btn slot="activator" color="deep-orange lighten-3">Sign up for Tutee</v-btn>
       <v-card>
         <v-card-title>
           <span class="headline">Tutee User Profile</span>
@@ -156,7 +170,7 @@
                 :rules="passwordRules"
                 required></v-text-field>
               </v-flex>
-              <v-flex xs12>
+              <!-- <v-flex xs12>
                 <v-text-field
                 name="confirm password"
                 label="Confirm Password"
@@ -164,7 +178,7 @@
                 id="confirmpassword2"
                 v-model="tuteeconfirmpassword"
                 required></v-text-field>
-              </v-flex>
+              </v-flex> -->
           </form>
             </v-layout>
           </v-container>
@@ -177,7 +191,12 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </v-layout>
+    <!-- </v-card> -->
+          </v-layout>
+      </v-layout>
+      </v-parallax>
+    </section>
+  </v-container>
 </template>
 
 <script>
