@@ -83,6 +83,7 @@ export default{
 
 <style>
   .header {
+    text-align: center;
     padding-top: 100px;
     padding-left: 50px;
     padding-right: 50px;

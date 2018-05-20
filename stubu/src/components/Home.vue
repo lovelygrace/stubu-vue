@@ -8,7 +8,7 @@
         class="white--text"
       >
       <h1 class="white--text mb-2 display-1 text-xs-center">LOOKING FOR A TUTOR OR STUDY BUDDY? STUBU HAS GOT YOU COVERED.</h1>
-      <h2 class="white--text mb-2 display-1 text-xs-center">STUBU HAS GOT YOU COVERED.</h2>
+      <!-- <h2 class="white--text mb-2 display-1 text-xs-center">STUBU HAS GOT YOU COVERED.</h2> -->
       </v-layout>
     </v-parallax>
     <v-card flat color="grey lighten-2">
