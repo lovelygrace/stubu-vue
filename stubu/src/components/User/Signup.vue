@@ -98,7 +98,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" flat @click.native="dialog1 = false">Close</v-btn>
-          <v-btn color="blue darken-1" flat @click="onSignupTutor" type="submit">Save</v-btn>
+          <v-btn color="blue darken-1" flat @click="onSignupTutor" type="submit">Sign Up</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -173,7 +173,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" flat @click.native="dialog2 = false">Close</v-btn>
-          <v-btn color="blue darken-1" flat @click="onSignupTutee" type="submit">Save</v-btn>
+          <v-btn color="blue darken-1" flat @click="onSignupTutee" type="submit">Sign Up</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
